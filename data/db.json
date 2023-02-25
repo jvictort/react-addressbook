@@ -1,3 +1,11 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "id": 43,
+      "contactName": "Jonas",
+      "contactEmail": "jonas@gmail.com",
+      "contactTel": "(99) 99999-9999",
+      "contactAddress": "Jona's house"
+    }
+  ]
 }

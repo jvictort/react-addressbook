@@ -1,7 +1,7 @@
 import './FormComponent.css';
 import { useState } from 'react';
 
-function FormComponent({ apiUrl }) {
+function FormComponent({ apiUrl, setContacts }) {
   const [contactName, setContactName] = useState('');
   const [contactEmail, setContactEmail] = useState('');
   const [contactTel, setContactTel] = useState('');
@@ -27,6 +27,8 @@ function FormComponent({ apiUrl }) {
       }
     })
 
+    setContacts((prevState) => [...prevState, contact]);
+
     setContactName('');
     setContactEmail('');
     setContactTel('');
@@ -42,6 +44,7 @@ function FormComponent({ apiUrl }) {
           <input type="text" name="contactName"
            className="form-input"
            required
+           value={contactName || ''}
            onChange={(event) => setContactName(event.target.value)}/>
 
           <label htmlFor="contactName" className="form-label">Nome</label>
@@ -52,6 +55,7 @@ function FormComponent({ apiUrl }) {
            className="form-input"
            placeholder="email@dominio.com.br"
            required
+           value={contactEmail || ''}
            onChange={(event) => setContactEmail(event.target.value)}/>
 
           <label htmlFor="contactEmail" className="form-label validated-label">Email</label>
@@ -63,6 +67,7 @@ function FormComponent({ apiUrl }) {
            className="form-input"
            placeholder="(99) 99999-9999"
            required
+           value={contactTel || ''}
            onChange={(event) => setContactTel(event.target.value)}/>
 
           <label htmlFor="contactTel" className="form-label validated-label">Telefone</label>
@@ -72,6 +77,7 @@ function FormComponent({ apiUrl }) {
           <input type="text" name="contactAddress"
            className="form-input"
            required
+           value={contactAddress || ''}
            onChange={(event) => setContactAddress(event.target.value)}/>
 
           <label htmlFor="contactAddress" className="form-label">Endereço</label>

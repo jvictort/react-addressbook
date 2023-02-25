@@ -67,6 +67,10 @@
 }
 
 @media(max-width: 850px) {
+  .table-container {
+    min-height: auto;
+  }
+
   .contact-table thead {
     display: none;
   }

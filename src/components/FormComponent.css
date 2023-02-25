@@ -1,0 +1,73 @@
+.form-container {
+  width: 35%;
+  border-radius: 1em;
+  padding: 1em;
+  color: var(--white);
+  /* background: #0d0d0f; */
+  background-color: #0A0A0A;
+  /* border: 1px solid red; */
+}
+
+.form-container .form-fieldset {
+  padding: 1.5em 1.5em;
+  border: 3px solid var(--ligth-blue);
+}
+
+.form-container .form-fieldset legend {
+  padding: 0.4em;
+  font-weight: 500;
+  font-size: 0.9em;
+  background-color: var(--ligth-blue);
+  /* margin-bottom: -3.5em; */
+}
+
+.form-container .form-fieldset .form-control {
+  position: relative;
+  margin-top: 4em;
+}
+
+.form-container .form-fieldset .form-control .form-input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+}
+
+.form-container .form-fieldset .form-control .form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.form-container .form-fieldset .form-control .validated-label {
+  top: -15px;
+  font-size: 0.8em;
+  color: var(--ligth-blue);
+  font-weight: 500;
+}
+
+.form-container .form-fieldset .form-control .form-input:valid ~ .form-label,
+.form-container .form-fieldset .form-control .form-input:focus ~ .form-label {
+  top: -15px;
+  font-size: 0.8em;
+  color: var(--ligth-blue);
+  font-weight: 500;
+}
+
+.form-container .form-fieldset .form-button {
+  border: none;
+  padding: 0.5em;
+  background: var(--ligth-blue);
+  color: var(--white);
+  font-size: 0.8em;
+  width: 100%;
+  margin-top: 3.5em;
+  cursor: pointer;
+  border-radius: 1em;
+  transition: 0.5s;
+}

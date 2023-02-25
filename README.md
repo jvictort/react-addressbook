@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Agenda eletrônica que permite cadastro, listagem, edição e exclusão de contatos.
+Agenda eletrônica que permite cadastro, listagem e exclusão de contatos.
 
 ## :gear: Funcionamento
 

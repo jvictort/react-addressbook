@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
 
 :root {
+  --ligth-gray: #222;
   --dark-gray: #121214;
   --ligth-blue: #02c8ff;
+  --dark-blue: #02AAD9;
+  --ligth-red: #AB0000;
+  --dark-red: #870000;
   --white: #FFF;
+
 }
 
 * {

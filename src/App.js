@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import FormComponent from './components/FormComponent.js';
+import { useState, useEffect } from 'react';
 import './App.css';
 
+const apiUrl = 'http://localhost:5000';
+
 function App() {
+  const [contacts, setContacts] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header-container">
+        <div className="text-container">
+          <h1>React Address Book</h1>
+          <h2>Gerencie seus contatos e mantenha as pessoas queridas mais próximas de você</h2>
+          <p>Crie laços e fortaleça suas conexões com o poder do <span>React</span></p>
+        </div>
+
+        <FormComponent apiUrl={apiUrl}/>
+
+      </div>
     </div>
   );
 }

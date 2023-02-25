@@ -1,14 +1,28 @@
 import './TableComponent.css';
 import { IoMdTrash } from 'react-icons/io';
 
-function TableComponent({ contacts }) {
+function TableComponent({ apiUrl, contacts, setContacts }) {
 
   const handleDelete = async (contactId) => {
-    console.log(contactId);
+    await fetch(apiUrl + '/contacts/' + contactId, {
+      method: 'DELETE',
+      mode: 'cors'
+    })
+
+    setContacts((prevState) => prevState.filter((contact) => contact.id !== contactId));
   }
-  // console.log(props.contacts);
+
+  if(!contacts.length) {
+    return (
+      <div className="contacts-container">
+          <h2>Não há contatos cadastrados</h2>
+      </div>
+    );
+  }
+
   return (
-    <div className="table-section">
+    <div className="contacts-container">
+
       <h2>Lista de contatos</h2>
 
       <div className="table-container">
@@ -26,11 +40,11 @@ function TableComponent({ contacts }) {
           <tbody id="finance-table-body">
             {contacts.map((contact) => (
               <tr key={contact.id}>
-                <th scope="col">{contact.id}</th>
-                <td scope="col">{contact.contactName}</td>
-                <td scope="col">{contact.contactEmail}</td>
-                <td scope="col">{contact.contactTel}</td>
-                <td scope="col">{contact.contactAddress}</td>
+                <th scope="row">{contact.id}</th>
+                <td>{contact.contactName}</td>
+                <td>{contact.contactEmail}</td>
+                <td>{contact.contactTel}</td>
+                <td>{contact.contactAddress}</td>
                 <td><button type="button" onClick={() => handleDelete(contact.id)} className="delete-button"><IoMdTrash size={25} className="delete-icon" /></button></td>
               </tr>
             ))}

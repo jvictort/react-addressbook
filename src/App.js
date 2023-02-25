@@ -23,7 +23,7 @@ function App() {
     }
 
     request();
-  }, [])
+  }, []);
 
   return (
     <div className="App">
@@ -38,7 +38,7 @@ function App() {
 
       </div>
 
-      <TableComponent contacts={contacts}/>
+      <TableComponent apiUrl={apiUrl} contacts={contacts} setContacts={setContacts}/>
     </div>
   );
 }
